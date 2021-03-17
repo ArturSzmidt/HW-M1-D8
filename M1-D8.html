@@ -54,7 +54,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         <button class="btn">Remove First Task</button>
         
 
-    <ul id="myTaskList" class="taskcss" onclick="addNewTask()"  >test</ul>
+    <ul id="myTaskList" class="taskcss" onclick="addNewTask()"  ></ul>
 
     <hr>
 
@@ -73,22 +73,14 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                 - Use the document.createElement to create the new List Item
                 - Append the child to the UL
             */
-            // let taskList = document.getElementById("myTaskList")
-
-            // const addNewTask = function ()
-            //  {
-            //   let inputText = document.getElementById("NewTask").value
-            //   let NewList = document.createElement("li")
-            //   newList.setAttribute("id","Newlist")
-            //   newList.innerText= " new list"
-            //   taskList.appendChild(Newlist)}
+            
             let taskList = document.getElementById("myTaskList")
             const addNewTask = function(){
             let taskList =  document.getElementById("myTaskList")
             let inputText = document.getElementById("newTask").value
             let newList = document.createElement("li")
             newList.setAttribute("id","newList")
-            newList.innerText = "llslslslslsl"
+            newList.innerText = inputText
             taskList.appendChild(newList)
             }
 
