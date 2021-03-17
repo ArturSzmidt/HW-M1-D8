@@ -82,13 +82,15 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             //   newList.setAttribute("id","Newlist")
             //   newList.innerText= " new list"
             //   taskList.appendChild(Newlist)}
-
+            let taskList = document.getElementById("myTaskList")
+            const addNewTask = function(){
             let taskList =  document.getElementById("myTaskList")
             let inputText = document.getElementById("newTask").value
             let newList = document.createElement("li")
             newList.setAttribute("id","newList")
             newList.innerText=${inputText}  
             taskList.appendChild(newList)
+            }
 
 
 
