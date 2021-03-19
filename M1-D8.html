@@ -45,13 +45,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         Create a button "Remove Last Task" to trigger the method "removeLast"
       -->
      
-      <button class="btn">Remove Last Task</button>
-      
+        <input type="button"  onclick="removeLast()" value="Remove last task">
     <!-- EXERCISE 4
         Create a button "Remove First Task" to trigger the method "removeFirst"
         -->
 
-        <button class="btn">Remove First Task</button>
+        <input  type="button"  onclick="removeFirst()" value="Remove first task">
         
 
     <ul id="myTaskList" class="taskcss" onclick="addNewTask()"  ></ul>
@@ -74,15 +73,29 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                 - Append the child to the UL
             */
             
-            let taskList = document.getElementById("myTaskList")
-            const addNewTask = function(){
-            let taskList =  document.getElementById("myTaskList")
-            let inputText = document.getElementById("newTask").value
-            let newList = document.createElement("li")
-            newList.setAttribute("id","newList")
-            newList.innerText = inputText
-            taskList.appendChild(newList)
-            }
+            // let taskList = document.getElementById("myTaskList")
+            // const addNewTask = function(){
+            // let taskList =  document.getElementById("myTaskList")
+            // let inputText = document.getElementById("newTask").value
+            // let newList = document.createElement("li")
+            // newList.setAttribute("id","newList")
+            // newList.innerText = inputText
+            // taskList.appendChild(newList)
+            // }
+
+            // document.getElementById("image").addEventListener()
+
+           let addNewTask = function() {
+              const list = document.querySelector("#myTaskList")
+              const newTask = document.getElementById("newTask")
+
+              const newLi = document.createElement("li")
+
+              newLi.innerHTML = newTask.Value
+
+              list.appendChild(newLi)
+
+            } 
 
 
 
@@ -92,19 +105,53 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       /* EXERCISE 6: 
                 Create a method "removeLast" which removes the last item from the task list
             */
+            const list = document.getElementById("myTaskList")
+
+
+            let removeLast = function(){
+              list.children[list.children.length-1].remove()
+            }
+
+
+
 
       /* EXERCISE 7: 
                 Create a method "removeFirst" which removes the first item from the task list
             */
 
+            const removeFirst = function(){
+              list.children[0].remove()
+            }
+
       /* EXERCISE 8: 
                Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
             */
+
+            const getTasksAsArray = function() {
+              let arrayOfTask = []
+              for (let child of list.children) {
+                arrayOfTasks.push(child.innerHTML)
+              }
+
+            }
 
       /* EXERCISE 9:
                Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
                onchange event listener ad applies it as background to every list item
             */
+
+           
+           const colorPicker = document.querySelector("#colorPicker")
+            const  changeTaskBackgroundColor =   function(){
+               console.log((colorPicker.value))
+               for (let child of list.children){
+                 child.style.backgroundColor = colorPicker.value
+               }
+            }
+
+            window.onload = function() {
+              colorPicker.addEventListener("change", changeTaskBackgroundColor)
+            }
 
       /* EXTRA */
 
